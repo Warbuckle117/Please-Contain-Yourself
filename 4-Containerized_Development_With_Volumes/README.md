@@ -2,7 +2,7 @@
 
 #### A note about the semantic formatting in this tutorial:
 
-- [ ] Check boxes are steps that need to be completed.
+- [x] Check boxes are steps that need to be completed.
 
 Text that looks `like this --for --example` are commands that you should type into your terminal. Or else.
 
@@ -18,7 +18,7 @@ Text that looks `like this --for --example` are commands that you should type in
 ## With that out of the way, let's get started!
 
 
-- [ ] Using the `cd` command in your terminal - navigate to the '/4-Containerized_Development_With_Containers' directory
+- [x] Using the `cd` command in your terminal - navigate to the '/4-Containerized_Development_With_Containers' directory
 
 ---
 >Feel free to check out the app that we'll be developing in our containerized environment. Similar to the previous Module, this application is also a server. Rather than serving a random number, however, it will serve a webpage with a background color defined by the string on line 12 of 'index.js'
@@ -37,17 +37,17 @@ Text that looks `like this --for --example` are commands that you should type in
 
 ---
 
-- [ ] Bundle our app into an image tagged with the name 'colorserver' by running `docker build -t colorserver .`
+- [x] Bundle our app into an image tagged with the name 'colorserver' by running `docker build -t colorserver .`
 
 **Docker will pull the 'node:8.10-alpine' image down from Dockerhub in order to complete the build. Notice how much faster the pull went compared to 'node:latest'. This is due to the 'alpine' version being so slim**
 
-- [ ] Spin up a new container based on the 'colorserver' image you just built, mapping it to port 8080 on the host. Run `docker run -d -p 8080:8080 colorserver`
+- [x] Spin up a new container based on the 'colorserver' image you just built, mapping it to port 8080 on the host. Run `docker run -d -p 8080:8080 colorserver`
 
-- [ ] Open up your browser and visit `localhost:8080`. Notice that the color of the web page is 'SteelBlue'.
+- [x] Open up your browser and visit `localhost:8080`. Notice that the color of the web page is 'SteelBlue'.
 
-- [ ] Now, pretend you are in a development environment and want to quickly test out several different colors to see which one looks best. Open up 'index.js' and change the color on line 12 from `'SteelBlue'` to the string `'SpringGreen'`
+- [x] Now, pretend you are in a development environment and want to quickly test out several different colors to see which one looks best. Open up 'index.js' and change the color on line 12 from `'SteelBlue'` to the string `'SpringGreen'`
 
-- [ ] Refresh the webpage in your browser. Just as you expect the webpage to present you with a calming pastel shade of green, your heart sinks as your eyes are assaulted with same cold, hard shade of steel blue.
+- [x] Refresh the webpage in your browser. Just as you expect the webpage to present you with a calming pastel shade of green, your heart sinks as your eyes are assaulted with same cold, hard shade of steel blue.
 
 **This will never do;** it would seem that if you want to use containers in your development, every time you make a change to the code you have to take the following steps: Change the code -> Build an image with your code -> Stop and remove the old container -> Remove the old image -> Spin up a container from the new image -> See if you like the change
 
@@ -62,7 +62,7 @@ Text that looks `like this --for --example` are commands that you should type in
 
 ---
 
-- [ ] We can take our already-built colorserver image and use the ` -v` option to mount a volume. The ` -v` option expects two arguments after it. First, the path to the directory you want the spun-up container to reference, and second, the path to the directory inside the container where you want those file changes to be reflected (separated by a colon)
+- [x] We can take our already-built colorserver image and use the ` -v` option to mount a volume. The ` -v` option expects two arguments after it. First, the path to the directory you want the spun-up container to reference, and second, the path to the directory inside the container where you want those file changes to be reflected (separated by a colon)
 
 - [ ] Reading that, you might think that running the command `docker run -d -p 1000:8080 -v ./:/src/app colorserver` would work, right? A relative filepath seemed to work okay for the `COPY` command inside the Dockerfile! And when using the `docker build` command! But you get the following message: 
 
