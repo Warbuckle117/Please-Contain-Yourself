@@ -64,7 +64,7 @@ Text that looks `like this --for --example` are commands that you should type in
 
 - [x] We can take our already-built colorserver image and use the ` -v` option to mount a volume. The ` -v` option expects two arguments after it. First, the path to the directory you want the spun-up container to reference, and second, the path to the directory inside the container where you want those file changes to be reflected (separated by a colon)
 
-- [ ] Reading that, you might think that running the command `docker run -d -p 1000:8080 -v ./:/src/app colorserver` would work, right? A relative filepath seemed to work okay for the `COPY` command inside the Dockerfile! And when using the `docker build` command! But you get the following message: 
+- [x] Reading that, you might think that running the command `docker run -d -p 1000:8080 -v ./:/src/app colorserver` would work, right? A relative filepath seemed to work okay for the `COPY` command inside the Dockerfile! And when using the `docker build` command! But you get the following message: 
 
 ```sh
 $ docker run -d -p 1000:8080 -v ./:/src/app colorserver
@@ -73,7 +73,7 @@ See 'docker run --help'.
 ```
 **As the error message implies, the first argument of the ` -v` option needs to be an absolute path to the directory in question**
 
-- [ ] How do you find the absolute path? Well do I have good news for you! As long as you are cd'd into the directory that you want the absolute path to (in this case the directory with the app's source code), just run the command `pwd`
+- [x] How do you find the absolute path? Well do I have good news for you! As long as you are cd'd into the directory that you want the absolute path to (in this case the directory with the app's source code), just run the command `pwd`
 
 `pwd` stands for 'print working directory' and it does just that. Mine looks like:
 
@@ -83,7 +83,7 @@ See 'docker run --help'.
 
 How about yours??
 
-- [ ] With that tidbit of information in hand we can mount a volume successfully. Spin up a detached container based on the 'colorserver' image, which is named 'psychic_container', which is mapped to port 1000 on the host, which has a volume mounted in the directory with the application's source code.
+- [x] With that tidbit of information in hand we can mount a volume successfully. Spin up a detached container based on the 'colorserver' image, which is named 'psychic_container', which is mapped to port 1000 on the host, which has a volume mounted in the directory with the application's source code.
 
 That's a monster of a command. Mine will look like this:
 
